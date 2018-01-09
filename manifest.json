@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "app.js" : {
+      "files" : [
+        "js/app.js"
+      ],
+      "main" : true
+    },
+    "app.css" : {
+      "files" : [
+        "scss/app.scss"
+      ],
+      "main" : true
+    },
+    "homepage.js" : {
+      "files" : [
+        "js/homepage.js"
+      ]
+    },
+    "fonts": {
+      "files": ["fonts/**/**"]
+    }
+  },
+  "paths": {
+    "source": "public/src/",
+    "dist": "public/dist/"
+  },
+  "config": {}
+}

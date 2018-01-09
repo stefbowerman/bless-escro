@@ -1,0 +1,27 @@
+.ticker {
+  position: fixed;
+  z-index: $z-index-ticker;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $ticker-height;
+  background: #121212;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAIElEQVQYV2NkZWX9/4/rNwPTN1YGRmZ+hv8MUMCILAMAts4JMSKKkoAAAAAASUVORK5CYII=);
+  color: #fabec9;
+  text-shadow: 0 0 3px #fd002a;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: $font-family-led;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.ticker--bottom {
+    top: auto;
+    bottom: 0;
+  }
+}
+
+.ticker-text {
+  padding-right: 8px;
+}
