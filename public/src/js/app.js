@@ -1,7 +1,9 @@
 (function(window, undefined){
 
+    var getClosest = require('./components/dom/getClosest');
     var Flickity  = require('flickity');
     var Marquee3k = require('./components/marquee3000.babel');
+    var VideoPlayer = require('./components/videoPlayer');
 
     var slider = document.getElementById('slider');
     var captions = document.getElementsByClassName('caption');
@@ -42,6 +44,14 @@
 
     Marquee3k.init({
       selector: 'ticker'
+    });
+
+    // Videos
+    var videoPlayers = [];
+    var videoContainers  = document.querySelectorAll('[data-video-url]');
+
+    [].forEach.call(videoContainers, function(el) {
+      videoPlayers.push( new VideoPlayer(el) );
     });
 
 })(window);
