@@ -222,6 +222,10 @@ select {
 .caption__text {
   font-size: 90%;
   // color: white;
+
+  p {
+    margin-bottom: 10px;
+  }
 }
 
 #parental-advisory {
@@ -270,14 +274,29 @@ select {
 .video-container__play-btn {
   height: 100%;
   opacity: .2;
-  transition: all .11s ease-out;
+  transition: all 500ms ease-out;
   z-index: 41;
-  font-size: 0;
 
+  &:before {
+    content: "WATCH";
+    letter-spacing: 2px;
+    font-size: 17px;
+    transition: opacity 500ms ease-out;
+  }
+
+  .no-touch &:before {
+    opacity: 0;
+  }
+
+  .touch &,
   .video-container:hover &,
   .video-container:focus & {
     opacity: 0.6;
     transform: scale(1.03) translateZ(0);
+
+    &:before {
+      opacity: 1;
+    }
   }
 
   .video-container--playing &,
@@ -294,7 +313,7 @@ select {
   width: 100%;
   overflow: hidden;
   opacity: 1;
-  transition: opacity 300ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
 
   .video-container--playing &,
   .video-container--loading & {

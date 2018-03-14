@@ -48,7 +48,7 @@
 
     // Videos
     var videoPlayers = [];
-    var videoContainers  = document.querySelectorAll('[data-video-url]');
+    var videoContainers  = document.querySelectorAll('[data-video-id]');
 
     [].forEach.call(videoContainers, function(el) {
       videoPlayers.push( new VideoPlayer(el) );
