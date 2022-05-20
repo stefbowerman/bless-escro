@@ -61,6 +61,16 @@ VideoPlayer.prototype = {
     this.state = state;
     this.container.classList.add(prefix + this.state);
   },
+  play: function() {
+    if(this.player) {
+      this.player.playVideo();
+    }
+  },
+  pause: function() {
+    if(this.player) {
+      this.player.pauseVideo();
+    }
+  },
   onPlaying: function() {
     this.switchToState('playing');
   },
@@ -74,7 +84,7 @@ VideoPlayer.prototype = {
     e.preventDefault();
 
     if(this.player) {
-      this.player.playVideo();
+      this.play();
     }
     else {
       if(typeof window.YT == "undefined") {

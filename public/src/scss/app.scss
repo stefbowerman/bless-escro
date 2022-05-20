@@ -305,7 +305,8 @@ select {
   }
 
   .video-container--playing &,
-  .video-container--loading & {
+  .video-container--loading &,
+  .video-container--paused & {
     opacity: 0;
     pointer-events: none;
   }
@@ -321,7 +322,8 @@ select {
   transition: opacity 500ms ease-in-out;
 
   .video-container--playing &,
-  .video-container--loading & {
+  .video-container--loading &,
+  .video-container--paused & {
     opacity: 0;
     pointer-events: none;
   }

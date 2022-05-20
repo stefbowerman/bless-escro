@@ -41,6 +41,19 @@
       if(captions.length > flickitySlider.selectedIndex) {
         captions[flickitySlider.selectedIndex].classList.add('is-active');
       }
+
+      // Pause any players that aren't part of the current slide
+      flickitySlider.slides.forEach(function(slide, i) {
+        if (i !== flickitySlider.selectedIndex) {
+          slide.cells.forEach(function(cell) {
+            videoPlayers.forEach(function(player, i) {
+              if (cell.element.contains(player.container)) {
+                player.pause()
+              }
+            })
+          })
+        }
+      })
     });
 
     flickitySlider.stopPlayer();
